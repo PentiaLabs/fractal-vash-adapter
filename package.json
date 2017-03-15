@@ -1,0 +1,30 @@
+{
+  "name": "@pentia/fractal-vash-adapter",
+  "version": "1.0.0",
+  "description": "Vash templating with Fractal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fractal",
+    "vash",
+    "razor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PentiaLabs/fractal-vash-adapter"
+  },
+  "author": "Brian Frisch",
+  "maintainers": [
+    "Pentia <dev@pentia.dk> (http://www.pentia.dk)"
+  ],
+  "bugs": {
+    "url": "https://github.com/PentiaLabs/fractal-vash-adapter"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@frctl/fractal": "^1.1.3",
+    "vash": "^0.12.2"
+  }
+}
