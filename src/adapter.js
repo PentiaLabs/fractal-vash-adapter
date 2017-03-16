@@ -6,9 +6,12 @@ const Adapter = require('@frctl/fractal').Adapter;
 class VashAdapter extends Adapter {
      constructor(vash, source, app) {
         super(vash, source);
-        
+
         this._app = app;
-        this.this.viewsLoaded = false;
+        this.source = source;
+        this.viewsLoaded = false;
+
+        this.loadViews(source);
     }
 
     loadViews (source) {
@@ -26,14 +29,13 @@ class VashAdapter extends Adapter {
                 vash.install(item.alias, item.content)
             }
         }
-        this.viewsLoaded = true;
     }
 
     render(path, str, context, meta) {
-        if (!this.viewsLoaded) loadViews(source);
-            const template = vash.compile(str);
-            context.cache = true;
-            return Promise.resolve(template(context));
+        const template = vash.compile(str);
+        context.cache = true;
+
+        return Promise.resolve(template(context));
     }
 }
 
